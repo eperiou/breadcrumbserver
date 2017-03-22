@@ -11,5 +11,4 @@ COPY . /usr/src/app
 
 EXPOSE 3000
 
-CMD ["nodal","s"]
-
+CMD ["nodal","db:bootstrap","nodal","s"]
