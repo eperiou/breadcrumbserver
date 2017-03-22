@@ -10,5 +10,5 @@ RUN npm install
 COPY . /usr/src/app
 
 EXPOSE 3000
-
-CMD ["nodal","db:bootstrap","nodal","s"]
+RUN nodal db:bootstrap
+CMD ["nodal","s"]
