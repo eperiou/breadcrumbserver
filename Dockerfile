@@ -1,10 +1,15 @@
+FROM postgres
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+EXPOSE 5432
+ENV POSTGRES_USER=nodal
+ENV POSTGRES_PASSWORD=nodal
+ENV POSTGRES_DB=server
 
 FROM node
 
 RUN npm install -g --silent nodal
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
 COPY package.json /usr/src/app/
 RUN npm install
 COPY . /usr/src/app
